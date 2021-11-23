@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+Plataforma Casa de Subastas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+La compañía Subastas Ganaderas Del Uraba Grande Suganar S A se encarga de realizar subastas de Ganado. Debido al impacto del covid y la pandemia Subastas Ganaderas Del Uraba Grande Suganar S A requiere digitalizar sus servicios. Por lo que lo han contactado a usted y su equipo con el fin de desarrollar una plataforma para realizar las diferentes subastas que ellos ofrecen.
+Los tipos de usuarios que debe manejar el sistema son administrador, usuario externo y usuario interno.
+Para acceder a los productos subastados el usuario externo deberá registrarse en la plataforma suministrando los siguientes datos:
+●	Nombre completo.
+●	Tipo de documento de identidad (Cédula de ciudadanía, pasaporte o cédula de extranjería)
+●	Número de identificación.
+●	Fecha de nacimiento.
+●	Fecha de expedición del documento.
+Este usuario externo deberá estar en la capacidad de:
+●	Visualizar subastas.
+●	Realizar una puja en una subasta.
+●	Cancelar una puja en una subasta, siempre y cuando la subasta no haya terminado. Cuando un usuario realice este proceso, el usuario con la subasta inmediatamente anterior debe colocarse como el ganador temporal de la subasta, y se le debe notificar.
+●	Ver historial de pujas.
+●	Ver pujas ganadas.
+●	Ver pujas pérdidas.
 
-## Available Scripts
+Un usuario interno debe estar en la capacidad de:
+●	Configurar subastas indicando el objeto (foto, nombre y descripción), fecha límite de tiempo de cancelación, fecha y hora inicial de la subasta, fecha y hora límite para terminar la subasta, monto inicial de la subasta.
+●	Generar los siguientes reportes:
+○	Pujas por subasta.
+○	Mostrar la puja ganadora de una subasta.
+○	Subastas disponibles.
+○	Subastas finalizadas dado un rango de fechas.
 
-In the project directory, you can run:
+Un administrador se encarga de gestionar los usuarios internos y además ejerce control total de la plataforma.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Notas:
+●	Los datos suministrados por los usuarios deben cumplir la política de privacidad de datos vigente, es decir las contraseñas de los usuarios deben almacenarse de forma cifrada y la conexión al servidor debe realizarse de forma segura.
+●	La base de datos debe ser no relacional.
+●	Se debe utilizar una arquitectura desacoplada, es decir, una API back end y un front end que consuma dicha API.
+●	La API back end debe estar desarrollada en Express.js
+●	El front end debe estar desarrollado en React.js
+Se debe utilizar Bootstrap como librería CSS  para manejar los estilos de su aplicación.
