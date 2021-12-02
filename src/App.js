@@ -8,15 +8,11 @@ import './assets/css/estilos.css';
 import './assets/css/carousel.css';
 
 //Importar Script
-import '../node_modules/bootstrap/dist/js/bootstrap.js';
+import '../node_modules/bootstrap/dist/js/bootstrap';
 
 //Importar componentes
 import NavbarC from './componets/NavbarC';
-import Carousel from './componets/Carousel';
-import Card from './componets/Card';
-import AuctionE from './componets/AuctionE';
-import SectionInfor from './componets/SectionInfor';
-import Footeer from './componets/Footer';
+
 
 //Importar el manejador de rutas para react
 import { BrowserRouter as R } from "react-router-dom";
@@ -26,11 +22,6 @@ function App() {
         <div>
             <R>
                 <NavbarC/>
-                <Carousel/>
-                <Card/>
-                <AuctionE/>
-                <SectionInfor/>
-                <Footeer/>
             </R>
         </div>
     );

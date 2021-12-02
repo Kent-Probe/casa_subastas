@@ -1,8 +1,9 @@
-import { Route, Routes, Link } from "react-router-dom";
+import {  Route, Routes, Link } from "react-router-dom";
 
 import AuctionP from '../pages/AuctionP';
 import EventsP from '../pages/EventsP';
 import CowsP from '../pages/CowsP';
+import Home from '../pages/Index';
 
 import React from 'react';
 
@@ -48,6 +49,7 @@ export default function Navbar(){
           </div>
         </header>
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/subastas" element={<AuctionP />} />
           <Route path="/eventos" element={<EventsP />} />
           <Route path="/tipo_de_ganado" element={<CowsP />} />

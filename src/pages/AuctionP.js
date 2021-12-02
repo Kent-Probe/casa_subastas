@@ -3,115 +3,76 @@ import React from 'react';
 export default function AuctionP(){
     return(
         <>
-        <div class="modal fade bg-white" id="templatemo_search" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div className="modal-dialog modal-lg" role="document">
-                <div className="w-100 pt-1 mb-5 text-right">
-                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <form action="" method="get" className="modal-content modal-body border-0 p-0">
-                    <div className="input-group mb-2">
-                        <input type="text" class="form-control" id="inputModalSearch" name="q" placeHolder="Search ..."/>
-                        <button type="submit" className="input-group-text bg-success text-light">
-                            <i className="fa fa-fw fa-search text-white"></i>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-
-
-        <section className="bg-light">
+        <section className="bg-light py-5">
             <div className="container pb-5">
                 <div className="row">
-                    <div className="col-lg-5 mt-5">
-                        <div className="card mb-3">
-                            <img class="card-img img-fluid" src="assets/img/product_single_10.jpg" alt="Card image cap" id="product-detail"/>
-                        </div>
-                    </div>
-                    <div className="col-lg-7 mt-5">
-                        <div className="card">
-                            <div className="card-body">
-                                <h1 className="h2">Active Wear</h1>
-                                <p className="h3 py-2">$25.00</p>
-                                <p className="py-2">
-                                    <i className="fa fa-star text-warning"></i>
-                                    <i className="fa fa-star text-warning"></i>
-                                    <i className="fa fa-star text-warning"></i>
-                                    <i className="fa fa-star text-warning"></i>
-                                    <i className="fa fa-star text-secondary"></i>
-                                    <span className="list-inline-item text-dark">Rating 4.8 | 36 Comments</span>
-                                </p>
-                                <ul className="list-inline">
-                                    <li className="list-inline-item">
-                                        <h6>Brand:</h6>
-                                    </li>
-                                    <li className="list-inline-item">
-                                        <p className="text-muted"><strong>Easy Wear</strong></p>
-                                    </li>
-                                </ul>
-
-                                <h6>Description:</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.</p>
-                                <ul className="list-inline">
-                                    <li className="list-inline-item">
-                                        <h6>Avaliable Color :</h6>
-                                    </li>
-                                    <li className="list-inline-item">
-                                        <p className="text-muted"><strong>White / Black</strong></p>
-                                    </li>
-                                </ul>
-
-                                <h6>Specification:</h6>
-                                <ul className="list-unstyled pb-3">
-                                    <li>Lorem ipsum dolor sit</li>
-                                    <li>Amet, consectetur</li>
-                                    <li>Adipiscing elit,set</li>
-                                    <li>Duis aute irure</li>
-                                    <li>Ut enim ad minim</li>
-                                    <li>Dolore magna aliqua</li>
-                                    <li>Excepteur sint</li>
-                                </ul>
-
-                                <form action="" method="GET">
-                                    <input type="hidden" name="product-title" value="Activewear"/>
-                                    <div className="row">
-                                        <div className="col-auto">
-                                            <ul className="list-inline pb-3">
-                                                <li className="list-inline-item">Size :
-                                                    <input type="hidden" name="product-size" id="product-size" value="S"/>
-                                                </li>
-                                                <li className="list-inline-item"><span class="btn btn-success btn-size">S</span></li>
-                                                <li className="list-inline-item"><span class="btn btn-success btn-size">M</span></li>
-                                                <li className="list-inline-item"><span class="btn btn-success btn-size">L</span></li>
-                                                <li className="list-inline-item"><span class="btn btn-success btn-size">XL</span></li>
-                                            </ul>
-                                        </div>
-                                        <div className="col-auto">
-                                            <ul className="list-inline pb-3">
-                                                <li className="list-inline-item text-right">
-                                                    Quantity
-                                                    <input type="hidden" name="product-quanity" id="product-quanity" value="1"/>
-                                                </li>
-                                                <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
-                                                <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
-                                                <li class="list-inline-item"><span class="btn btn-success" id="btn-plus">+</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div className="row pb-3">
-                                        <div className="col d-grid">
-                                            <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">Buy</button>
-                                        </div>
-                                        <div className="col d-grid">
-                                            <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Add To Cart</button>
-                                        </div>
-                                    </div>
-                                </form>
-
+                    <ul>
+                        <div className="mt-5">
+                            <div className="card mb-3">
+                                <img class="card-img img-fluid" src="assets/img/vaca1.jpg" alt="Card image cap" id="product-detail"/>
                             </div>
                         </div>
-                    </div>
+                        <div className="mt-5">
+                            <div className="card">
+                                <div className="container card-body">
+                                    <div className="row">
+                                        <div className="col-6">
+                                            <h1 className="h2">TERNERAS ESPECIALIZADAS TIPO LECHE</h1>
+                                            
+                                            <ul className="list-inline">
+                                                <li className="list-inline-item">
+                                                    <h6>Brand:</h6>
+                                                </li>
+                                                <li className="list-inline-item">
+                                                    <p className="text-muted"><strong>Easy Wear</strong></p>
+                                                </li>
+                                            </ul>
+
+                                            <h6>Description:</h6>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.</p>
+                                            <ul className="list-inline">
+                                                <li className="list-inline-item">
+                                                    <h6>Avaliable Color :</h6>
+                                                </li>
+                                                <li className="list-inline-item">
+                                                    <p className="text-muted"><strong>White / Black</strong></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div className="col-6">
+                                            <div className="card mb-4 rounded-3 shadow-sm border-success">
+                                                <div className="card-header py-3">
+                                                    
+                                                    <div className="card-body">
+                                                        <h5 className="card-title ">TERNERAS ESPECIALIZADAS TIPO LECHE</h5>
+                                                    </div>
+                                                    <ul className="list-group list-group-flush d-flex flex-row gap-1">
+                                                        <li className="list-group-item col martillo col d-flex justify-content-center"><h6 className="text-success ">Current bid <br/><span className="text-dark">$876.000</span></h6></li>
+                                                    </ul>
+                                                    <div className="card-body">
+                                                        <a href={"https://es.reactjs.org/"} className="card-link text-success">0d:4h:35m:02s</a>
+                                                        <a href={"https://es.reactjs.org/"} className="card-link text-danger">30 Bids</a>
+                                                    </div>
+                                                </div>
+                                            </div>    
+                                        </div>                           
+                                                                                    
+                                    </div>
+
+
+                                    <form action="" method="GET">
+                                        <input type="hidden" name="product-title" value="Activewear"/>
+                                        <div className="row pb-3">
+                                            <div className="col d-grid">
+                                                <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">Pujar</button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
                 </div>
             </div>
         </section>
