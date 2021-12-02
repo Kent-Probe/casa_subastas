@@ -1,0 +1,99 @@
+* {
+  transition: all 0.3s linear;
+  text-decoration: none;
+}
+a {
+  color: #ffffff;
+}
+*::selection {
+  background-color: #43b055;
+  color: #ffffff;
+}
+
+body {
+  height: 100vh;
+  overflow-x: hidden;
+}
+h5 {
+  color: black;
+}
+
+.p-3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.px-2 {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.px-2:hover {
+  color: greenyellow;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.pricing-header {
+  margin-top: 400px;
+}
+
+.titulo {
+  margin-top: -350px;
+}
+
+#fondo_finalizar {
+  background-color: #43b055;
+}
+
+.monetizacion {
+  display: flex;
+  flex-direction: row;
+}
+
+.featurette-image {
+  width: 600px;
+  height: 500px;
+}
+
+.icon-twitter,
+.icon-facebook,
+.icon-instagram {
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.titulo-cabecera {
+  color: #ffffff;
+}
+
+.titulo-cabecera:hover {
+  color: greenyellow;
+}
+
+.dollar::before {
+  content: url("../img/dolar.png");
+}
+
+.martillo::before {
+  content: url("../img/martillo.png");
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
