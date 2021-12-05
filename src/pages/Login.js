@@ -98,7 +98,7 @@ export default function Login() {
                 ¿No tienes cuenta?
               </label>
               <Link
-                to="/Registrarse"
+                to="/registrarse"
                 className="text-success text-decoration-none ms-2"
               >
                 Registrese

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Dashboard(){
+export default function DashboardIn(){
     return(
       <> 
         <div className="container-fluid">

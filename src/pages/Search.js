@@ -16,7 +16,7 @@ export default function Search() {
               <div className="input-group mb-2">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="inputModalSearch"
                   name="q"
                   placeholder="Search ..."
