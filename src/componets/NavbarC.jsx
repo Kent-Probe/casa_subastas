@@ -15,8 +15,6 @@ import SearchB from "./SearchB";
 
 import React from "react";
 
-
-
 export default function Navbar() {
   return (
     <>
