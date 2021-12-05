@@ -1,59 +1,143 @@
-import {  Route, Routes, Link } from "react-router-dom";
+//Importar para rutas
+import { Route, Routes, Link } from "react-router-dom";
 
-import AuctionP from '../pages/AuctionP';
-import EventsP from '../pages/EventsP';
-import CowsP from '../pages/CowsP';
-import Home from '../pages/Index';
+//Importar las paginas
+import AuctionP from "../pages/AuctionP";
+import EventsP from "../pages/EventsP";
+import CowsP from "../pages/CowsP";
+import Home from "../pages/Index";
+import Login from "../pages/Login";
+import Dashboard from "../pages/Dashboard";
+import Sign_up from "../pages/Sign_up.js";
 
-import React from 'react';
+//Importar modulos
+import SearchB from "./SearchB";
+
+import React from "react";
 
 
-export default function Navbar(){
 
-    return (
-      <>
-        <header className="p-3 mb-3  bg-success fixed-top ">
-          <div className="container">
-            <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-              <a href={"https://www.youtube.com/watch?v=ZyYCDRAGmkM"} className="d-flex align-items-center mb-2 mb-lg-0  mx-3 text-decoration-none fw-bold fs-4 titulo-cabecera">
-                Suganar S A
-              </a>
-      
-              
-                <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-
-                  <li><Link to="/" className=" px-2 text-decoration-none">Inicio</Link></li>
-                  <li><Link to='/subastas' className=" px-2 text-decoration-none">Subastas</Link></li>
-                  <li><Link to='/eventos' className=" px-2 text-decoration-none">Eventos</Link></li>
-                  <li><Link to='/tipo_de_ganado' className=" px-2 text-decoration-none">Tipo de ganado</Link></li>
-
-                </ul>
-              
-              <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                <input type="search" className="form-control" placeholder="search..." aria-label="Search"/>
-              </form>
-      
-              <div className="dropdown text-end">
-                <a href={"https://www.youtube.com/watch?v=ZyYCDRAGmkM"} className="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img src={"https://cdn.pixabay.com/photo/2014/12/06/16/52/smiley-559124__340.png"} alt="mdo" width="32" height="32" className="rounded-circle"/>
-                </a>
-                <ul className="dropdown-menu text-small text-white" aria-labelledby="dropdownUser1">
-                  <li><a className="dropdown-item " href={"https://www.youtube.com/watch?v=ZyYCDRAGmkM"}>Andres</a></li>
-                  <li><a className="dropdown-item" href={"https://www.youtube.com/watch?v=ZyYCDRAGmkM"}>Kevin</a></li>
-                  <li><a className="dropdown-item" href={"https://www.youtube.com/watch?v=ZyYCDRAGmkM"}>leonardo</a></li>
-                  <li><hr className="dropdown-divider"/></li>
-                  <li><a className="dropdown-item" href={"https://www.youtube.com/watch?v=ZyYCDRAGmkM"}>Sign out</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
+export default function Navbar() {
+  return (
+    <>
+        <header className="mb-3 bg-success fixed-top ">
+            <nav className="navbar navbar-expand-lg navbar-light shadow">
+                <div className="container d-flex justify-content-between align-items-center">
+                    <a className="d-flex align-items-center mb-2 mb-lg-0  mx-3 text-decoration-none fw-bold fs-4 titulo-cabecera">
+                    Suganar S.A
+                    </a>
+                    <button
+                    className="navbar-toggler border-0"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#templatemo_main_nav"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    >
+                    <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                    className="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
+                    id="templatemo_main_nav"
+                    >
+                    <div className="flex-fill">
+                        <ul className="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li className="nav-item">
+                            <Link className="nav-link text-white px-2" to="/">
+                            Inicio
+                            </Link>
+                        </li>
+                        <li className="nav-item ">
+                            <Link className="nav-link text-white px-2" to="/subastas">
+                            Subastas
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link text-white px-2" to="/eventos">
+                            Eventos
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link
+                            className="nav-link text-white px-2"
+                            to="/tipo_de_ganado"
+                            >
+                            Tipo de Ganado
+                            </Link>
+                        </li>
+                        </ul>
+                    </div>
+                    <div className="navbar align-self-center d-flex">
+                        <div className="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div className="input-group">
+                            <input
+                            type="text"
+                            className="form-control"
+                            id="inputMobileSearch"
+                            placeholder="Search ..."
+                            />
+                            <div className="input-group-text">
+                            <i className="fa fa-fw fa-search"></i>
+                            </div>
+                        </div>
+                        </div>
+                        <a
+                        className="nav-icon d-none d-lg-inline"
+                        data-bs-toggle="modal"
+                        data-bs-target="#templatemo_search"
+                        >
+                        <i className="fa fa-fw fa-search text-white mr-2"></i>
+                        </a>
+                        <div className="dropdown text-end">
+                        <a
+                            href={"https://www.youtube.com/watch?v=ZyYCDRAGmkM"}
+                            className="d-block link-dark text-decoration-none text-white dropdown-toggle"
+                            id="dropdownUser1"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            <i className="fa fa-fw fa-user text-white mr-3"></i>
+                        </a>
+                        <ul
+                            className=" dropdown-menu dropdown-menu-end  text-small text-white"
+                            aria-labelledby="dropdownUser1"
+                        >
+                            <li>
+                            <Link to="/entrar" className="dropdown-item">
+                                Entrar
+                            </Link>
+                            <Link to="/administrativo" className="dropdown-item">
+                                temp
+                            </Link>
+                            </li>
+                            <li>
+                            <hr className="dropdown-divider" />
+                            </li>
+                            <li>
+                            <Link to="/entrar" className="dropdown-item">
+                                Sign out
+                            </Link>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </nav>
         </header>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/subastas" element={<AuctionP />} />
-          <Route path="/eventos" element={<EventsP />} />
-          <Route path="/tipo_de_ganado" element={<CowsP />} />
-        </Routes>
-      </>
-    );
-};
+
+        <SearchB/>
+        
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/subastas" element={<AuctionP />} />
+        <Route path="/eventos" element={<EventsP />} />
+        <Route path="/tipo_de_ganado" element={<CowsP />} />
+        <Route path="/entrar" element={<Login />} />
+        <Route path="/administrativo" element={<Dashboard/>} />
+        <Route path="/registrarse" element={<Sign_up/>}/>
+      </Routes>
+    </>
+  );
+}

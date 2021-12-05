@@ -14,11 +14,12 @@ body {
   height: 100vh;
   overflow-x: hidden;
 }
+
 h5 {
   color: black;
 }
 
-.p-3 {
+.header {
   position: fixed;
   top: 0;
   left: 0;
@@ -83,6 +84,125 @@ h5 {
 .martillo::before {
   content: url("../img/martillo.png");
 }
+
+.martillo_rojo3::before {
+  content: url("../img/martillo_rojo3.png");
+}
+
+/* Login  y registrarse*/
+
+.containerOwnApp {
+  padding-top: 15px;
+}
+
+.login-page {
+  padding: 10% 0 0;
+  margin: 0 auto 100px;
+  max-width: 360px;
+  position: relative;
+}
+
+.login-form {
+  border: 1px solid #43b055;
+  border-radius: 10px;
+}
+
+.login-form-header {
+  padding-top: 10px;
+}
+
+.login-from-row {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.login-form-font-header {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/*
+   * Custom translucent site header
+   */
+
+.site-header {
+  background-color: rgba(128, 85, 85, 0.85);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+.site-header a {
+  color: #8e8e8e;
+  transition: color 0.15s ease-in-out;
+}
+.site-header a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*
+   * Dummy devices (replace them with your own or something else entirely!)
+   */
+
+.product-device {
+  position: absolute;
+  right: 10%;
+  bottom: -30%;
+  width: 300px;
+  height: 540px;
+  background-color: #333;
+  border-radius: 21px;
+  transform: rotate(30deg);
+}
+
+.product-device::before {
+  position: absolute;
+  top: 10%;
+  right: 10px;
+  bottom: 10%;
+  left: 10px;
+  content: "";
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.product-device-2 {
+  top: -25%;
+  right: auto;
+  bottom: 0;
+  left: 5%;
+  background-color: #e5e5e5;
+}
+
+/*
+   * Extra utilities
+   */
+
+.flex-equal > * {
+  flex: 1;
+}
+@media (min-width: 768px) {
+  .flex-md-equal > * {
+    flex: 1;
+  }
+}
+/* login y registro form */
+@media (min-width: 360px) {
+    .loginsito,.register{
+      margin-top: 40%;
+    }
+  }
+  @media (min-width: 768px) {
+    .loginsito,.register{
+      margin-top: 20%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .loginsito,.register{
+      margin-top: 0%;
+    }
+  }
+/* fin */
 
 .bd-placeholder-img {
   font-size: 1.125rem;
