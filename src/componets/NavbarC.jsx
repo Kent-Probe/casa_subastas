@@ -6,10 +6,10 @@ import AuctionP from "../pages/AuctionP";
 import EventsP from "../pages/EventsP";
 import CowsP from "../pages/CowsP";
 import Home from "../pages/Index";
-import Login from "../pages/Login";
+import Login from "../pages/LoginPage";
 import Dashboard from "../pages/Dashboard";
 import DashboardIn from "../pages/DashboardIn";
-import Sign_up from "../pages/Sign_up.js";
+import Sign_up from "../pages/RegisterPage";
 import Profile from "../pages/Profile";
 import Search from "../pages/Search";
 
@@ -104,7 +104,7 @@ export default function Navbar() {
                                 >
                                     <i className="fa fa-fw fa-search text-white mr-2"></i>
                                 </a>
-                                <DropownMenu/>
+                                <DropownMenu />
                             </div>
                         </div>
                     </div>

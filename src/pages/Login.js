@@ -35,7 +35,7 @@ export default function Login() {
         else if(password === null || password === ''){
             alert('ERROR: Introduzca el password');
         }
-    
+        
         else if(correo !=='andres@uni.com' || password !== '123' ){
             console.log('ERROR: El correo o password no validos');
             
@@ -46,7 +46,6 @@ export default function Login() {
             cookies.set("correo", correo, { path: '/' })
             cookies.set("password", password, { path: '/' })
             console.log(cookies.get("correo"));
-            //window.location.href="/"
         }
         
     }
