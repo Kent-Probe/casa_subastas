@@ -31,7 +31,7 @@ export default class NavbarC extends Component {
         this.state = {
             username: "Kevin",
             rol: "admin",
-            logger: true,
+            logger: false,
         };
     }
 

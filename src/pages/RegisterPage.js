@@ -24,16 +24,16 @@ const RegisterPage = () => {
                         // Validacion nombre
                         if (!valores.nombre) {
                             errores.nombre = "Por favor ingresa nombre completo";
-                        } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.nombre)) {
+                        } else if (!/^[a-zA-ZÀ-ÿ\s]{8,40}$/.test(valores.nombre)) {
                             errores.nombre =
-                                "El nombre solo puede contener letras y espacios";
+                                "Nombre invalido";
                         }
 
                         if (!valores.nombreu) {
                             errores.nombreu = "Por favor ingresa usuario";
                         } else if (!/^[a-zA-ZÀ-ÿ]{1,40}$/.test(valores.nombreu)) {
                             errores.nombreu =
-                                "El nombre no puede contener espacios";
+                                "Nombre invalido";
                         }
                         
                         if (!valores.correo) {
@@ -131,6 +131,29 @@ const RegisterPage = () => {
 
                             <div className="form-group p-2">
                                 <label
+                                    htmlFor="password"
+                                    className="labelform blockquote"
+                                >
+                                    contraseña
+                                </label>
+                                <Field
+                                    className="form-control blockquote"
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    placeholder="*********"
+                                />
+                                <ErrorMessage
+                                    className="text-danger"
+                                    name="password"
+                                    component={() => (
+                                        <div className="error">{errors.correo}</div>
+                                    )}
+                                />
+                            </div>
+
+                            <div className="form-group p-2">
+                                <label
                                     htmlFor="tipoDoc"
                                     className="labelform blockquote"
                                 >
@@ -170,60 +193,13 @@ const RegisterPage = () => {
                                     )}
                                 />
                             </div>
-
-                            <div className="form-group p-2">
-                                <label
-                                    htmlFor="fecha"
-                                    className="labelform blockquote"
-                                >
-                                    Nacimiento
-                                </label>
-                                <Field
-                                    className="inp form-control blockquote"
-                                    name="fecha"
-                                    type="date"
-                                    id="fecha"
-                                    name="fecha"
-                                    placeholder=""
-                                />
-                                <ErrorMessage
-                                    name="correo"
-                                    component={() => (
-                                        <div className="error">{errors.fecha}</div>
-                                    )}
-                                />
-                            </div>
-
-                            <div className="form-group p-2">
-                                <label
-                                    htmlFor="fecha"
-                                    className="labelform blockquote"
-                                >
-                                    Expedición
-                                </label>
-                                <Field
-                                    className="inp form-control col-8 blockquote"
-                                    name="fechae"
-                                    type="date"
-                                    id="fechae"
-                                    name="fechae"
-                                    placeholder=""
-                                />
-                                <ErrorMessage
-                                    className="form-control"
-                                    name="correo"
-                                    component={() => (
-                                        <div className="error">{errors.fecha}</div>
-                                    )}
-                                />
-                            </div>
+                            
                             <div className="pb-3 d-flex justify-content-end mt-4">
-                                <button
+                                <input
                                     type="submit"
                                     className="btn col-4 btn-success justify-content-center"
-                                >
-                                    Registro
-                                </button>
+                                    value="Registro"
+                                />
                                 {formularioEnviado && (
                                     <p className="exito">
                                         Formulario enviado con exito!

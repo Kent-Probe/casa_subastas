@@ -8,7 +8,7 @@ export default class OptionsDropown extends Component {
         this.state = {
             username: "Kevin",
             rol: "admin",
-            logger: true,
+            logger: false,
         };
     }
 

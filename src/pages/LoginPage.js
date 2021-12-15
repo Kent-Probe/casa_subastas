@@ -86,15 +86,11 @@ const LoginPage = () => {
                                 />
                             </div>
                             <div className="p-2 d-flex justify-content-end mt-4">
-                                <button
-                                    type="submit"
+                                <input                                    type="submit"
                                     className="btn col-4 btn-success justify-content-center"
-                                >
-                                    Entra
-                                </button>
-                                {formularioEnviado && (
-                                    window.location.href="/"
-                                )}
+                                    value="entrar"
+                                />
+                                {formularioEnviado}
                             </div>
                             <div className="row float-end">
                                 <div className="col-md-12 login-from-row ">
