@@ -17,18 +17,15 @@ import "../node_modules/bootstrap/dist/js/bootstrap";
 
 //Importar componentes
 import NavbarC from "./componets/NavbarC";
+import React from "react";
 
-//Importar el manejador de rutas para react
-import { BrowserRouter as R } from "react-router-dom";
+export default class App extends React.Component{
 
-function App() {
-  return (
-    <div>
-      <R>
-        <NavbarC />
-      </R>
-    </div>
-  );
+    render(){
+        return (
+            <div>
+                <NavbarC />
+            </div>
+        );
+    }
 }
-
-export default App;

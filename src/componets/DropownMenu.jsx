@@ -22,14 +22,6 @@ export default function DropownMenu() {
                 aria-labelledby="dropdownUser1"
             >
                 <OptionsDropown/>
-                <li>
-                    <hr className="dropdown-divider" />
-                </li>
-                <li>
-                    <Link to="/entrar" className="dropdown-item">
-                        Sign out
-                    </Link>
-                </li>
             </ul>
         </div>
     );

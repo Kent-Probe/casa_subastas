@@ -12,11 +12,11 @@ export default function Dashboard() {
             <div className="container-fluid">
                 <div className="row">
                     <LateralMenu
-                        linkDashboard="/usuario_internno"
-                        linkDashboardMen1="/usuario_internno/subasta"
-                        linkDashboardMen2="/usuario_internno/reportes"
-                        men1="Subasta"
+                        men1="Subastas"
                         men2="Reportes"
+                        linkDashboard="/usuario_interno"
+                        linkDashboardMen1="/usuario_interno/subasta"
+                        linkDashboardMen2="/usuario_interno/reportes"
                     />
                     <DashboardP />
                 </div>

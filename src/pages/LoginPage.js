@@ -16,7 +16,7 @@ const LoginPage = () => {
 
                     // Validacion nombre
                     
-                    if (valores.nombreu === "") {
+                    if (valores.nombreu === "" || !valores.nombreu ) {
                         errores.nombreu = "campo nombre no puede estar vacìo";
                     }
 

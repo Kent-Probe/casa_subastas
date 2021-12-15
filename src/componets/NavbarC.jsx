@@ -13,16 +13,76 @@ import Sign_up from "../pages/RegisterPage";
 import Profile from "../pages/Profile";
 import Search from "../pages/Search";
 
+
 //Importar Conponentes
 import SearchB from "./SearchB";
+import NotFound from "./NotFound";
 
-import React from "react";
+
+
 import DashboardInS from "../pages/DashboardInS";
 import DropownMenu from "./DropownMenu";
 
-export default function Navbar() {
-    return (
-        <>
+import React, { Component } from 'react';
+
+export default class NavbarC extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            username: "Kevin",
+            rol: "admin",
+            logger: true,
+        };
+    }
+
+    //Rutas permitidas si esta logeado
+    allowRen(){
+        //si esta logeado
+        if(this.state.logger){
+            //si es admin
+            if(this.state.rol === "admin"){
+                return(
+                    <>
+                        <Route path="/administrativo" element={<Dashboard />} />                       
+                    </>
+                );
+            }//si es interno
+            else if(this.state.rol === "interno"){
+                return(
+                    <>
+                        <Route path="/usuario_interno" element={<DashboardIn />} />
+                        <Route
+                            path="/usuario_interno/subasta"
+                            element={<DashboardInS />}
+                        />
+                        <Route
+                            path="/usuario_interno/reportes"
+                            element={<DashboardIn />}
+                        />
+                    </>
+                );
+            }//si es externo
+            else if(this.state.rol === "externo"){
+                <Route path="/perfil_usuario" element={<Profile />} />
+            }//Si por algna razon no es ninguno de estos
+            else{
+                return(
+                    <Route path="/registrarse" element={<Sign_up />} />
+                );
+            }
+        }//Si no esta logeado
+        else{
+            return(
+                <>
+                    <Route path="/registrarse" element={<Sign_up />} />
+                    <Route path="/entrar" element={<Login />} />
+                </>
+            );
+        }
+    }
+    render() {
+        return (
+            <div>
             <header className="mb-3 bg-success fixed-top ">
                 <nav className="navbar navbar-expand-lg navbar-light shadow">
                     <div className="container d-flex justify-content-between align-items-center">
@@ -118,21 +178,17 @@ export default function Navbar() {
                 <Route path="/subastas" element={<AuctionP />} />
                 <Route path="/eventos" element={<EventsP />} />
                 <Route path="/tipo_de_ganado" element={<CowsP />} />
-                <Route path="/entrar" element={<Login />} />
                 <Route path="/buscar" element={<Search />} />
-                <Route path="/administrativo" element={<Dashboard />} />
-                <Route path="/usuario_internno" element={<DashboardIn />} />
                 <Route path="/registrarse" element={<Sign_up />} />
-                <Route path="/perfil_usuario" element={<Profile />} />
+                {this.allowRen()}
                 <Route
-                    path="/usuario_internno/subasta"
-                    element={<DashboardInS />}
-                />
-                <Route
-                    path="/usuario_internno/reportes"
-                    element={<DashboardIn />}
+                    path="*"
+                    element={<NotFound />}
                 />
             </Routes>
-        </>
-    );
+            </div>
+        )
+    }
 }
+
+
