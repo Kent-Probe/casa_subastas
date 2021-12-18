@@ -1,6 +1,9 @@
 //Importar para rutas
 import { Route, Routes, Link } from "react-router-dom";
 
+//importar cookies
+import Cookies from "universal-cookie";
+
 //Importar las paginas
 import AuctionP from "../pages/AuctionP";
 import EventsP from "../pages/EventsP";
@@ -17,6 +20,7 @@ import Search from "../pages/Search";
 //Importar Conponentes
 import SearchB from "./SearchB";
 import NotFound from "./NotFound";
+import Exit from "../pages/Exit";
 
 
 
@@ -28,10 +32,11 @@ import React, { Component } from 'react';
 export default class NavbarC extends Component {
     constructor(props){
         super(props);
+        const cookies = new Cookies();
         this.state = {
-            username: "Kevin",
-            rol: "admin",
-            logger: false,
+            username: cookies.get('username'),
+            rol: cookies.get('rol') ,
+            logger: cookies.get('logger') || false,
         };
     }
 
@@ -63,7 +68,9 @@ export default class NavbarC extends Component {
                 );
             }//si es externo
             else if(this.state.rol === "externo"){
-                <Route path="/perfil_usuario" element={<Profile />} />
+                return(
+                    <Route path="/perfil_usuario" element={<Profile />} />
+                );
             }//Si por algna razon no es ninguno de estos
             else{
                 return(
@@ -180,6 +187,7 @@ export default class NavbarC extends Component {
                 <Route path="/tipo_de_ganado" element={<CowsP />} />
                 <Route path="/buscar" element={<Search />} />
                 <Route path="/registrarse" element={<Sign_up />} />
+                <Route path="/salir" element={<Exit />} />
                 {this.allowRen()}
                 <Route
                     path="*"

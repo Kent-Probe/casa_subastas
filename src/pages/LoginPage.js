@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Link } from "react-router-dom";
 
+import { update, create, getall, getOne } from '../services/user'
+
+import Cookies from "universal-cookie";
+
 const LoginPage = () => {
     const [formularioEnviado, cambiarFormularioEnviado] = useState(false);
+    const cookies = new Cookies();
     return (
         <>
             <Formik
@@ -15,8 +20,8 @@ const LoginPage = () => {
                     let errores = {};
 
                     // Validacion nombre
-                    
-                    if (valores.nombreu === "" || !valores.nombreu ) {
+
+                    if (valores.nombreu === "") {
                         errores.nombreu = "campo nombre no puede estar vacìo";
                     }
 
@@ -31,12 +36,20 @@ const LoginPage = () => {
                     console.log("Formulario enviado");
                     cambiarFormularioEnviado(true);
                     setTimeout(() => cambiarFormularioEnviado(false), 5000);
+                    const respon = getOne({nombreu: valores.nombreu, password: valores.password})
+                    console.log(respon)
+                    //cookies.set('username', valores.nombreu, {path:'/'});
+                    //cookies.set('rol', 'externo', {path:'/'});
+                    //cookies.set('logger', false, {path:'/'});
+                    //window.location.href='/'
                 }}
             >
                 {({ errors }) => (
-                    <section className="mt-5" >
+                    <section className="mt-5">
                         <Form className="shadow-lg p-2 mb-5 bg-white rounded login-page ">
-                            <h1 className="p-2 login-form-font-header mt-3"><span className="text-success">E</span>ntrar</h1>
+                            <h1 className="p-2 login-form-font-header mt-3">
+                                <span className="text-success">E</span>ntrar
+                            </h1>
                             <div className="form-group p-2">
                                 <label
                                     htmlFor="nombreu"
@@ -86,7 +99,8 @@ const LoginPage = () => {
                                 />
                             </div>
                             <div className="p-2 d-flex justify-content-end mt-4">
-                                <input                                    type="submit"
+                                <input
+                                    type="submit"
                                     className="btn col-4 btn-success justify-content-center"
                                     value="entrar"
                                 />

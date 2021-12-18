@@ -2,16 +2,23 @@ import { Link } from "react-router-dom";
 
 import React, { Component } from "react";
 
+//Importar cookies
+import Cookies from "universal-cookie";
+
+
 export default class OptionsDropown extends Component {
+    
+    
     constructor(props) {
         super(props);
+        const cookies = new Cookies();
         this.state = {
-            username: "Kevin",
-            rol: "admin",
-            logger: false,
+            username: cookies.get('username'),
+            rol: cookies.get('rol') ,
+            logger: cookies.get('logger')? true : false,
         };
     }
-
+    
     option(){
         if (this.state.logger) {
             if (this.state.rol === "interno") {
@@ -21,7 +28,7 @@ export default class OptionsDropown extends Component {
                             Dashboard
                         </Link>
                         <hr className="dropdown-divider" />
-                        <Link to="/entrar" className="dropdown-item">
+                        <Link to="/salir" className="dropdown-item">
                             Sign out
                         </Link>
                     </li>
@@ -33,7 +40,7 @@ export default class OptionsDropown extends Component {
                             {this.state.username}
                         </Link>
                         <hr className="dropdown-divider" />
-                        <Link to="/entrar" className="dropdown-item">
+                        <Link to="/salir" className="dropdown-item">
                             Sign out
                         </Link>
                     </li>
@@ -45,7 +52,7 @@ export default class OptionsDropown extends Component {
                             Dashboard
                         </Link>
                         <hr className="dropdown-divider" />
-                        <Link to="/entrar" className="dropdown-item">
+                        <Link to="/salir" className="dropdown-item">
                             Sign out
                         </Link>
                     </li>
@@ -53,7 +60,7 @@ export default class OptionsDropown extends Component {
             }else{
                 return (
                     <li>
-                        <Link to="/entrar" className="dropdown-item">
+                        <Link to="/salir" className="dropdown-item">
                             Sign out
                         </Link>
                     </li>
@@ -74,11 +81,10 @@ export default class OptionsDropown extends Component {
 
     render() {
         console.log(this.state.logger)
-        console.log(this.state)
         try{
             return this.option();
         }catch{
-            return this.option();
+            {window.location.href = '/'};
         }
     }
 }
