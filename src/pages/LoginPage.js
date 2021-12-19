@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Link } from "react-router-dom";
 
-import { update, create, getall, getOne } from '../services/user'
+import { getOne } from '../services/User'
 
 import Cookies from "universal-cookie";
 
@@ -31,17 +31,19 @@ const LoginPage = () => {
 
                     return errores;
                 }}
-                onSubmit={(valores, { resetForm }) => {
+                onSubmit={async (valores, { resetForm }) => {
                     resetForm();
                     console.log("Formulario enviado");
                     cambiarFormularioEnviado(true);
                     setTimeout(() => cambiarFormularioEnviado(false), 5000);
-                    const respon = getOne({nombreu: valores.nombreu, password: valores.password})
-                    console.log(respon)
-                    //cookies.set('username', valores.nombreu, {path:'/'});
-                    //cookies.set('rol', 'externo', {path:'/'});
-                    //cookies.set('logger', false, {path:'/'});
-                    //window.location.href='/'
+                    const respon = await getOne({nombreu: valores.nombreu, password: valores.password})
+                    if (respon){
+                        cookies.set('username', respon.username, {path:'/'});
+                        cookies.set('rol', respon.rol, {path:'/'});
+                        cookies.set('logger', true, {path:'/'});
+                        window.location.href='/'
+                    }
+                    console.log(cookies.getAll())
                 }}
             >
                 {({ errors }) => (

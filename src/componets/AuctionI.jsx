@@ -2,9 +2,16 @@ import React from 'react';
 
 import { Link } from "react-router-dom";
 
+import { getall } from '../services/Auction';
 
+export default function AuctionI (props){
 
-export default function AuctionI(){
+    const respon = async () => {
+        await getall();
+    }
+    
+    console.log(respon);
+
     return(
         <div className="col">
             <Link to="/subastas" className="text-decoration-none">

@@ -1,15 +1,15 @@
 import React from "react";
 
-export default function InfoProfile() {
+export default function InfoProfile(props) {
     return (
         <div className="card mb-4">
             <div className="card-body">
                 <div className="row">
                     <div className="col-sm-3">
-                        <p className="mb-0">Full Name</p>
+                        <p className="mb-0">Nombre</p>
                     </div>
                     <div className="col-sm-9">
-                        <p className="text-muted mb-0">Johnatan Smith</p>
+                        <p className="text-muted mb-0">{props.name}</p>
                     </div>
                 </div>
                 <hr />
@@ -18,38 +18,19 @@ export default function InfoProfile() {
                         <p className="mb-0">Email</p>
                     </div>
                     <div className="col-sm-9">
-                        <p className="text-muted mb-0">example@example.com</p>
+                        <p className="text-muted mb-0">{props.email}</p>
                     </div>
                 </div>
                 <hr />
                 <div className="row">
                     <div className="col-sm-3">
-                        <p className="mb-0">Phone</p>
+                        <p className="mb-0">contraseña</p>
                     </div>
                     <div className="col-sm-9">
-                        <p className="text-muted mb-0">(097) 234-5678</p>
+                        <p className="text-muted mb-0">{props.password}</p>
                     </div>
                 </div>
                 <hr />
-                <div className="row">
-                    <div className="col-sm-3">
-                        <p className="mb-0">Mobile</p>
-                    </div>
-                    <div className="col-sm-9">
-                        <p className="text-muted mb-0">(098) 765-4321</p>
-                    </div>
-                </div>
-                <hr />
-                <div className="row">
-                    <div className="col-sm-3">
-                        <p className="mb-0">Address</p>
-                    </div>
-                    <div className="col-sm-9">
-                        <p className="text-muted mb-0">
-                            Bay Area, San Francisco, CA
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
     );

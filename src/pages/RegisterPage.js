@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Link } from "react-router-dom";
 
+//importar conexion con back end
+import { create } from '../services/User'
 
 const RegisterPage = () => {
     const [formularioEnviado, cambiarFormularioEnviado] = useState(false);
@@ -10,36 +12,35 @@ const RegisterPage = () => {
             <div className="p-2 py-2 container">
                 <Formik
                     initialValues={{
-                        nombre: "",
-                        correo: "",
-                        nombreu: "",
+                        name: "",
+                        email: "",
+                        username: "",
                         tipoDoc: "",
                         id: "",
-                        fecha: "",
-                        fechae: "",
+                        password: "",
                     }}
                     validate={(valores) => {
                         let errores = {};
 
-                        // Validacion nombre
-                        if (!valores.nombre) {
-                            errores.nombre = "Por favor ingresa nombre completo";
-                        } else if (!/^[a-zA-ZÀ-ÿ\s]{8,40}$/.test(valores.nombre)) {
-                            errores.nombre =
-                                "Nombre invalido";
+                        // Validacion name
+                        if (!valores.name) {
+                            errores.name = "Por favor ingresa name completo";
+                        } else if (!/^[a-zA-ZÀ-ÿ\s]{8,40}$/.test(valores.name)) {
+                            errores.name =
+                                "name invalido";
                         }
 
-                        if (!valores.nombreu) {
-                            errores.nombreu = "Por favor ingresa usuario";
-                        } else if (!/^[a-zA-ZÀ-ÿ]{1,40}$/.test(valores.nombreu)) {
-                            errores.nombreu =
-                                "Nombre invalido";
+                        if (!valores.username) {
+                            errores.username = "Por favor ingresa usuario";
+                        } else if (!/^[a-zA-ZÀ-ÿ]{1,40}$/.test(valores.username)) {
+                            errores.username =
+                                "name invalido";
                         }
                         
-                        if (!valores.correo) {
-                            errores.correo = 'Por favor ingrese un correo valido';
-                        } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(valores.correo)) {
-                            errores.correo = 'Por favor ingrese un correo valido';
+                        if (!valores.email) {
+                            errores.email = 'Por favor ingrese un email valido';
+                        } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(valores.email)) {
+                            errores.email = 'Por favor ingrese un email valido';
                         }
 
                         if (!valores.id) {
@@ -50,11 +51,22 @@ const RegisterPage = () => {
 
                         return errores;
                     }}
-                    onSubmit={(valores, { resetForm }) => {
+                    onSubmit={async (valores, { resetForm }) => {
                         resetForm();
                         console.log("Formulario enviado");
                         cambiarFormularioEnviado(true);
                         setTimeout(() => cambiarFormularioEnviado(false), 5000);
+
+                        const respon = await create({
+                            name: valores.name,
+                            email: valores.email,
+                            username: valores.username,
+                            id: valores.id,
+                            password: valores.password
+                        })
+                        if (respon){
+                            window.location.href='/login'
+                        }
                     }}
                 >
                     {({ errors }) => (
@@ -62,69 +74,69 @@ const RegisterPage = () => {
                             <h1 className="p-2 mt-2"><span className="text-success">R</span>egistro</h1>
                             <div className="form-group mt-5 p-2">
                                 <label
-                                    htmlFor="nombre"
+                                    htmlFor="name"
                                     className="labelform blockquote"
                                 >
-                                    Nombre
+                                    name
                                 </label>
                                 <Field
                                     className="inp form-control blockquote"
                                     type="text"
-                                    id="nombre"
-                                    name="nombre"
+                                    id="name"
+                                    name="name"
                                     placeholder="John Doe"
                                 />
                                 <ErrorMessage
                                     className="text-danger"
-                                    name="nombre"
+                                    name="name"
                                     component={() => (
-                                        <div className="error">{errors.nombre}</div>
+                                        <div className="error">{errors.name}</div>
                                     )}
                                 />
                             </div>
-                            
+
                             <div className="form-group p-2">
                                 <label
-                                    htmlFor="nombreu"
+                                    htmlFor="email"
                                     className="labelform blockquote"
                                 >
-                                    Nombre de usuario
+                                    email
                                 </label>
                                 <Field
                                     className="form-control blockquote"
                                     type="text"
-                                    id="nombreu"
-                                    name="nombreu"
-                                    placeholder="JohnDoe"
-                                />
-                                <ErrorMessage
-                                    className="text-danger"
-                                    name="nombreu"
-                                    component={() => (
-                                        <div className="error">{errors.nombreu}</div>
-                                    )}
-                                />
-                            </div>
-                            
-                            <div className="form-group p-2">
-                                <label
-                                    htmlFor="correo"
-                                    className="labelform blockquote"
-                                >
-                                    Correo
-                                </label>
-                                <Field
-                                    className="form-control blockquote"
-                                    type="text"
-                                    id="correo"
-                                    name="correo"
+                                    id="email"
+                                    name="email"
                                     placeholder="JohnDoe@gmail.com"
                                 />
                                 <ErrorMessage
                                     className="text-danger"
-                                    name="correo"
+                                    name="email"
                                     component={() => (
-                                        <div className="error">{errors.correo}</div>
+                                        <div className="error">{errors.email}</div>
+                                    )}
+                                />
+                            </div>
+                            
+                            <div className="form-group p-2">
+                                <label
+                                    htmlFor="username"
+                                    className="labelform blockquote"
+                                >
+                                    name de usuario
+                                </label>
+                                <Field
+                                    className="form-control blockquote"
+                                    type="text"
+                                    id="username"
+                                    name="username"
+                                    placeholder="JohnDoe"
+                                />
+                                <ErrorMessage
+                                    className="text-danger"
+                                    name="username"
+                                    component={() => (
+                                        <div className="error">{errors.username}</div>
                                     )}
                                 />
                             </div>
@@ -147,7 +159,7 @@ const RegisterPage = () => {
                                     className="text-danger"
                                     name="password"
                                     component={() => (
-                                        <div className="error">{errors.correo}</div>
+                                        <div className="error">{errors.email}</div>
                                     )}
                                 />
                             </div>

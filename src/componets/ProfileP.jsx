@@ -11,15 +11,12 @@ export default function ProfileP (props){
                 className="rounded-circle img-fluid"
                 style={{ width: 150 }}
             />
-            <h5 className="my-3">John Smith</h5>
-            <p className="text-muted mb-1">Full Stack Developer</p>
-            <p className="text-muted mb-4">Bay Area, San Francisco, CA</p>
+            <h5 className="my-3">{ props.nameuser }</h5>
+            <p className="text-muted mb-1">{ props.rol}</p>
+            <p className="text-muted mb-4">{ props.name }</p>
             <div className="d-flex justify-content-center mb-2">
                 <button type="button" className="btn btn-primary">
-                    Follow
-                </button>
-                <button type="button" className="btn btn-outline-primary ms-1">
-                    Message
+                    Editar
                 </button>
             </div>
         </div>
