@@ -15,7 +15,7 @@ import DashboardIn from "../pages/DashboardIn";
 import Sign_up from "../pages/RegisterPage";
 import Profile from "../pages/Profile";
 import Search from "../pages/Search";
-
+import AddAucts from "../pages/AddAucts";
 
 //Importar Conponentes
 import SearchB from "./SearchB";
@@ -55,6 +55,7 @@ export default class NavbarC extends Component {
             else if(this.state.rol === "interno"){
                 return(
                     <>
+                        <Route path="/usuario_interno/agregar_subasta" element={<AddAucts />}/>
                         <Route path="/usuario_interno" element={<DashboardIn />} />
                         <Route
                             path="/usuario_interno/subasta"
