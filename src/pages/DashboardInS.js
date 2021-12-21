@@ -1,6 +1,9 @@
 import LateralMenu from "../componets/LateralMenu";
 import AuctionCard from "../componets/AuctionCard";
 import { getOne } from "../services/Auction";
+import Pagination from "../componets/Pagination";
+
+
 
 import Cookies from "universal-cookie";
 
@@ -42,6 +45,7 @@ export default function DashboardInS() {
                     />
                 ))
             }
+            <Pagination />
         </>
     );
 }

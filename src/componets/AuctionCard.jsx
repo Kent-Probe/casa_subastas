@@ -1,5 +1,4 @@
 import React from 'react';
-import Pagination from "../componets/Pagination";
 
 
 export default function AuctionCard(params) {
@@ -42,7 +41,7 @@ export default function AuctionCard(params) {
                             </p>
                         </div>
                     </div>
-                    <Pagination />
+                    
                 </div>
             </div>
             <div

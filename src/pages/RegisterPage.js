@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { create } from '../services/User'
 
 const RegisterPage = () => {
-    const [formularioEnviado, cambiarFormularioEnviado] = useState(false);
     return (
         <>
             <div className="p-2 py-2 container">
@@ -32,7 +31,7 @@ const RegisterPage = () => {
 
                         if (!valores.username) {
                             errores.username = "Por favor ingresa usuario";
-                        } else if (!/^[a-zA-ZÀ-ÿ]{1,40}$/.test(valores.username)) {
+                        } else if (!/^[a-zA-ZÀ-ÿ0-9]{1,40}$/.test(valores.username)) {
                             errores.username =
                                 "name invalido";
                         }
@@ -54,8 +53,7 @@ const RegisterPage = () => {
                     onSubmit={async (valores, { resetForm }) => {
                         resetForm();
                         console.log("Formulario enviado");
-                        cambiarFormularioEnviado(true);
-                        setTimeout(() => cambiarFormularioEnviado(false), 5000);
+                        
 
                         const respon = await create({
                             name: valores.name,
@@ -64,9 +62,7 @@ const RegisterPage = () => {
                             id: valores.id,
                             password: valores.password
                         })
-                        if (respon){
-                            window.location.href='/login'
-                        }
+                        console.log(respon())
                     }}
                 >
                     {({ errors }) => (
@@ -212,11 +208,6 @@ const RegisterPage = () => {
                                     className="btn col-4 btn-success justify-content-center"
                                     value="Registro"
                                 />
-                                {formularioEnviado && (
-                                    <p className="exito">
-                                        Formulario enviado con exito!
-                                    </p>
-                                )}
                             </div>
                             <div className="row float-end">
                                 <div className="col-md-12 login-from-row ">

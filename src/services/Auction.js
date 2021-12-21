@@ -2,7 +2,7 @@ import axios from "axios";
 import { urlBack } from './ConexionBackEnd';
 
 const getall = () =>{
-    const request = axios.post(urlBack + 'productos');
+    const request = axios.post(urlBack + 'producto');
     return request.then(response => response.data).catch('A ocurrido un error')
 }
 
@@ -13,7 +13,7 @@ const getOne = filterID =>{
 
 const create = newObject =>{
     console.log('Entre aqui')
-    const request = axios.post(urlBack + 'producto', newObject);
+    const request = axios.post(urlBack + 'addProducto', newObject);
     return request.then(response => response.data).catch('A ocurrido un error')
 }
 

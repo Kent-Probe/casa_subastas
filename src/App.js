@@ -23,10 +23,11 @@ export default class App extends React.Component{
 
     render(){
         return (
+            <>
             <div>
-                {document.title = 'URABA'}
                 <NavbarC />
             </div>
+            </>
         );
     }
 }

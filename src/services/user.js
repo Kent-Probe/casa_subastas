@@ -2,7 +2,7 @@ import axios from "axios";
 import { urlBack } from './ConexionBackEnd';
 
 const getall = () =>{
-    const request = axios.post(urlBack + 'credenciales');
+    const request = axios.post(urlBack + 'users');
     return request.then(response => response.data).catch('A ocurrido un error')
 }
 
